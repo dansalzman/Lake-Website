@@ -452,7 +452,7 @@ a { color: inherit; text-decoration: none; }
   gap: 40px;
   margin-bottom: 40px;
 }
-.footer-brand img { height: 60px; margin-bottom: 16px; }
+.footer-brand img { width: 180px; height: auto; margin-bottom: 16px; }
 .footer-brand p { color: rgba(241, 231, 208, 0.65); font-size: 0.92rem; max-width: 320px; }
 .footer-col h4 {
   color: var(--cream);
@@ -524,7 +524,7 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 480px) {
   .brand { gap: 8px; }
-  .brand img { height: 42px; }
+  .brand img { height: 38px; }
   .brand-text span { display: none; }
   .brand-text strong { font-size: 0.95rem; }
   .header-cta { gap: 10px; }
@@ -607,6 +607,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--navy);
 }
 .form-field input,
+.form-field select,
 .form-field textarea {
   font: inherit;
   color: var(--ink);
@@ -618,6 +619,7 @@ a { color: inherit; text-decoration: none; }
 }
 .form-field textarea { min-height: 140px; resize: vertical; }
 .form-field input:focus,
+.form-field select:focus,
 .form-field textarea:focus {
   outline: 2px solid var(--maroon);
   outline-offset: 1px;
@@ -641,4 +643,43 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 1180px) and (min-width: 961px) {
   .main-nav { gap: 20px; }
   .header-phone { display: none; }
+}
+
+/* ===== Workday drop-off page ===== */
+.hero--dropoff { background-position: 70% center; }
+.hero--dropoff .hero-inner { max-width: 640px; }
+
+.steps .step-num {
+  display: block;
+  font-family: var(--font-head);
+  color: var(--maroon);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+}
+
+.promise-list {
+  max-width: 820px;
+  margin: 0 auto;
+  border: 1px solid #e7ded0;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.promise-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+  padding: 20px 26px;
+  border-bottom: 1px solid #e7ded0;
+  align-items: center;
+}
+.promise-row:last-child { border-bottom: none; }
+.promise-row:nth-child(odd) { background: var(--cream-light); }
+.promise-row strong { font-family: var(--font-head); color: var(--navy); letter-spacing: 0.03em; font-weight: 600; }
+.promise-row span { color: var(--maroon); font-weight: 600; }
+
+.section--cream .info-line { margin-top: 22px; }
+
+@media (max-width: 640px) {
+  .promise-row { grid-template-columns: 1fr; gap: 4px; padding: 16px 20px; }
 }
