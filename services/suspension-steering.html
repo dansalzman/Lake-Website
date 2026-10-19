@@ -20,13 +20,15 @@
 <meta name="geo.position" content="32.8874732;-117.1566729">
 <meta name="ICBM" content="32.8874732, -117.1566729">
 
+<link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" href="../images/brand/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="../images/brand/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../images/brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#16293D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/styles.css?v=5">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -36,7 +38,7 @@
   "alternateName": "SP Automotive San Diego",
   "description": "Veteran-owned independent auto repair shop in Miramar, San Diego. Service, repair and classic car restoration for all makes and models, plus commercial fleet maintenance.",
   "url": "https://sp-automotive.com/",
-  "logo": "https://sp-automotive.com/images/brand/sp-badge-1200.png",
+  "logo": "https://sp-automotive.com/images/brand/sp-logo-720.png",
   "image": "https://sp-automotive.com/images/storefront.jpg",
   "telephone": "+1-858-406-3375",
   "email": "lake@sp-automotive.com",
@@ -119,6 +121,7 @@
   ],
   "knowsAbout": [
     "Auto repair",
+    "Oil changes",
     "Classic car restoration",
     "Carbureted engine repair",
     "Fleet vehicle maintenance",
@@ -130,6 +133,13 @@
     "@type": "OfferCatalog",
     "name": "Automotive Services",
     "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Oil Change"
+        }
+      },
       {
         "@type": "Offer",
         "itemOffered": {
@@ -185,6 +195,13 @@
           "@type": "Service",
           "name": "Commercial Fleet Maintenance"
         }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Military and Veteran Car Care"
+        }
       }
     ]
   },
@@ -239,11 +256,31 @@
 <header class="site-header">
   <div class="container">
     <a class="brand" href="../index.html">
-      <img src="../images/brand/sp-horizontal.svg" alt="SP Automotive — auto repair, Miramar, veteran-owned" width="234" height="54">
+      <picture>
+        <source media="(max-width: 480px)" srcset="../images/brand/sp-shield.svg" width="46" height="49">
+        <img src="../images/brand/sp-primary.svg" alt="SP Automotive &mdash; Service, Repair, Restoration in Miramar, San Diego" width="260" height="77">
+      </picture>
     </a>
     <nav class="main-nav" aria-label="Primary">
       <a href="../index.html">Home</a>
-      <a href="../services.html" aria-current="page">Services</a>
+      <a href="../military.html">Military</a>
+      <div class="nav-dropdown">
+        <a href="../services.html" class="active">Services</a>
+        <button class="dropdown-toggle" type="button" aria-expanded="false" aria-controls="services-menu" aria-label="Show all services"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="dropdown-menu" id="services-menu">
+          <a href="../services.html">All Services</a>
+          <a href="../services/oil-change.html">Oil Change</a>
+          <a href="../services/general-repair-maintenance.html">General Repair &amp; Maintenance</a>
+          <a href="../services/engine-diagnostics.html">Engine Diagnostics</a>
+          <a href="../services/brake-repair.html">Brake Repair</a>
+          <a href="../services/suspension-steering.html" aria-current="page">Suspension &amp; Steering</a>
+          <a href="../services/engine-repair.html">Engine Repair</a>
+          <a href="../services/performance-modifications.html">Performance Modifications</a>
+          <a href="../services/classic-car-restoration.html">Classic Car Restoration</a>
+          <a href="../fleet-services.html">Fleet Maintenance</a>
+          <a href="../drop-off.html">Workday Drop-Off</a>
+        </div>
+      </div>
       <a href="../fleet-services.html">Fleet</a>
       <a href="../restorations.html">Restorations</a>
       <a href="../about.html">Our Story</a>
@@ -363,7 +400,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="../images/brand/sp-badge.svg" alt="SP Automotive veteran-owned badge" width="180" height="111">
+        <img src="../images/brand/sp-primary-reversed.svg" alt="SP Automotive &mdash; Service, Repair, Restoration" width="260" height="79" loading="lazy">
         <p>Independently owned auto repair in Miramar, San Diego, with honest service on everything from daily drivers and fleet vehicles to classic carbureted machines.</p>
         <div class="footer-faith">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
@@ -376,7 +413,10 @@
       </div>
       <div class="footer-col">
         <h4>QUICK LINKS</h4>
+        <a href="../military.html">Military &amp; Veterans</a>
         <a href="../services.html">Services</a>
+        <a href="../services/oil-change.html">Oil Change</a>
+        <a href="../drop-off.html">Workday Drop-Off</a>
         <a href="../fleet-services.html">Fleet Services</a>
         <a href="../restorations.html">Restorations</a>
         <a href="../faq.html">FAQ</a>
@@ -387,7 +427,7 @@
         <h4>VISIT THE SHOP</h4>
         <p>7675 Formula Place, Suite D<br>San Diego, CA 92121</p>
         <a href="tel:+18584063375">(858) 406-3375</a>
-        <a href="mailto:lake@sp-automotive.com">lake@sp-automotive.com</a>
+        <a class="email-link" href="../contact.html#request" data-email-lake>lake@sp-automotive.com</a>
         <p>Mon&ndash;Fri: 8:00 AM &ndash; 5:00 PM<br>Sat: 8:00 AM &ndash; 12:00 PM<br>Sun: Closed</p>
       </div>
     </div>
@@ -398,6 +438,6 @@
   </div>
 </footer>
 
-<script src="../js/main.js"></script>
+<script src="../js/main.js?v=5"></script>
 </body>
 </html>

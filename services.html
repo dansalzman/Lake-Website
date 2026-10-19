@@ -20,13 +20,15 @@
 <meta name="geo.position" content="32.8874732;-117.1566729">
 <meta name="ICBM" content="32.8874732, -117.1566729">
 
+<link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="images/brand/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="images/brand/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="images/brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#16293D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=4">
+<link rel="stylesheet" href="css/styles.css?v=5">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -36,7 +38,7 @@
   "alternateName": "SP Automotive San Diego",
   "description": "Veteran-owned independent auto repair shop in Miramar, San Diego. Service, repair and classic car restoration for all makes and models, plus commercial fleet maintenance.",
   "url": "https://sp-automotive.com/",
-  "logo": "https://sp-automotive.com/images/brand/sp-badge-1200.png",
+  "logo": "https://sp-automotive.com/images/brand/sp-logo-720.png",
   "image": "https://sp-automotive.com/images/storefront.jpg",
   "telephone": "+1-858-406-3375",
   "email": "lake@sp-automotive.com",
@@ -119,6 +121,7 @@
   ],
   "knowsAbout": [
     "Auto repair",
+    "Oil changes",
     "Classic car restoration",
     "Carbureted engine repair",
     "Fleet vehicle maintenance",
@@ -130,6 +133,13 @@
     "@type": "OfferCatalog",
     "name": "Automotive Services",
     "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Oil Change"
+        }
+      },
       {
         "@type": "Offer",
         "itemOffered": {
@@ -185,6 +195,13 @@
           "@type": "Service",
           "name": "Commercial Fleet Maintenance"
         }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Military and Veteran Car Care"
+        }
       }
     ]
   },
@@ -203,6 +220,19 @@
       "position": 1,
       "item": {
         "@type": "Service",
+        "name": "Oil Change",
+        "provider": {
+          "@id": "https://sp-automotive.com/#business"
+        },
+        "areaServed": "San Diego, CA",
+        "url": "https://sp-automotive.com/services/oil-change.html"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Service",
         "name": "General Repair and Maintenance",
         "provider": {
           "@id": "https://sp-automotive.com/#business"
@@ -213,7 +243,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 2,
+      "position": 3,
       "item": {
         "@type": "Service",
         "name": "Engine Diagnostics",
@@ -226,7 +256,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 3,
+      "position": 4,
       "item": {
         "@type": "Service",
         "name": "Brake Repair",
@@ -239,7 +269,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 4,
+      "position": 5,
       "item": {
         "@type": "Service",
         "name": "Suspension and Steering",
@@ -252,7 +282,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 5,
+      "position": 6,
       "item": {
         "@type": "Service",
         "name": "Engine Repair",
@@ -265,7 +295,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 6,
+      "position": 7,
       "item": {
         "@type": "Service",
         "name": "Performance Modifications",
@@ -278,7 +308,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 7,
+      "position": 8,
       "item": {
         "@type": "Service",
         "name": "Classic Car Restoration",
@@ -291,7 +321,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 8,
+      "position": 9,
       "item": {
         "@type": "Service",
         "name": "Commercial Fleet Maintenance",
@@ -331,11 +361,31 @@
 <header class="site-header">
   <div class="container">
     <a class="brand" href="index.html">
-      <img src="images/brand/sp-horizontal.svg" alt="SP Automotive — auto repair, Miramar, veteran-owned" width="234" height="54">
+      <picture>
+        <source media="(max-width: 480px)" srcset="images/brand/sp-shield.svg" width="46" height="49">
+        <img src="images/brand/sp-primary.svg" alt="SP Automotive &mdash; Service, Repair, Restoration in Miramar, San Diego" width="260" height="77">
+      </picture>
     </a>
     <nav class="main-nav" aria-label="Primary">
       <a href="index.html">Home</a>
-      <a href="services.html" aria-current="page">Services</a>
+      <a href="military.html">Military</a>
+      <div class="nav-dropdown">
+        <a href="services.html" aria-current="page">Services</a>
+        <button class="dropdown-toggle" type="button" aria-expanded="false" aria-controls="services-menu" aria-label="Show all services"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="dropdown-menu" id="services-menu">
+          <a href="services.html">All Services</a>
+          <a href="services/oil-change.html">Oil Change</a>
+          <a href="services/general-repair-maintenance.html">General Repair &amp; Maintenance</a>
+          <a href="services/engine-diagnostics.html">Engine Diagnostics</a>
+          <a href="services/brake-repair.html">Brake Repair</a>
+          <a href="services/suspension-steering.html">Suspension &amp; Steering</a>
+          <a href="services/engine-repair.html">Engine Repair</a>
+          <a href="services/performance-modifications.html">Performance Modifications</a>
+          <a href="services/classic-car-restoration.html">Classic Car Restoration</a>
+          <a href="fleet-services.html">Fleet Maintenance</a>
+          <a href="drop-off.html">Workday Drop-Off</a>
+        </div>
+      </div>
       <a href="fleet-services.html">Fleet</a>
       <a href="restorations.html">Restorations</a>
       <a href="about.html">Our Story</a>
@@ -356,7 +406,7 @@
     <div class="hero-inner">
       <span class="eyebrow">Service &middot; Repair &middot; Restoration</span>
       <h1>Our Services</h1>
-      <p class="lede">All makes, all models, all eras &mdash; general repair, diagnostics, brakes, suspension, engine work, performance builds, classic restoration and commercial fleet maintenance under one roof in Miramar, San Diego.</p>
+      <p class="lede">All makes, all models, all eras &mdash; oil changes, general repair, diagnostics, brakes, suspension, engine work, performance builds, classic restoration and commercial fleet maintenance under one roof in Miramar, San Diego.</p>
     </div>
   </div>
 </section>
@@ -366,10 +416,24 @@
 
     <div class="service-row">
       <div class="service-media">
-        <img src="images/photos/f150-on-lift.jpg" alt="A white Ford F-150 on the lift at SP Automotive with the hood open" loading="lazy">
+        <img src="images/photos/f150-on-lift.jpg" alt="A pickup on the lift at SP Automotive for an oil change and inspection" loading="lazy">
       </div>
       <div class="service-text">
         <span class="service-number">01</span>
+        <h2>Oil Change</h2>
+        <p class="lede">The right oil for your engine &mdash; synthetic, high-mileage, diesel or high-zinc for classics &mdash; with a new filter, a fluid top-off and a full inspection with photos. Drop it off on the way to work and it&rsquo;s done the same day.</p>
+        <div class="btn-row">
+          <a class="btn btn--navy" href="services/oil-change.html">More About Oil Changes</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-row reverse">
+      <div class="service-media">
+        <img src="images/photos/f150-on-lift.jpg" alt="A white Ford F-150 on the lift at SP Automotive with the hood open" loading="lazy">
+      </div>
+      <div class="service-text">
+        <span class="service-number">02</span>
         <h2>General Repair &amp; Maintenance</h2>
         <p class="lede">Oil changes, fluid services, belts, filters, and scheduled maintenance &mdash; the routine work that keeps small problems from becoming expensive ones. We service all makes and models, from today&rsquo;s daily drivers to well-loved older vehicles.</p>
         <div class="btn-row">
@@ -378,12 +442,12 @@
       </div>
     </div>
 
-    <div class="service-row reverse">
+    <div class="service-row">
       <div class="service-media">
         <img src="images/photos/lake-diagnostics.jpg" alt="Owner Lake Williams running a scan tool diagnostic inside a customer's truck" loading="lazy">
       </div>
       <div class="service-text">
-        <span class="service-number">02</span>
+        <span class="service-number">03</span>
         <h2>Diagnostics</h2>
         <p class="lede">Modern vehicles are complex, but honest diagnosis shouldn&rsquo;t be. We use up-to-date diagnostic equipment to pinpoint issues accurately, then walk you through exactly what we found and what it will take to fix it &mdash; no guesswork, no unnecessary repairs.</p>
         <div class="btn-row">
@@ -392,12 +456,12 @@
       </div>
     </div>
 
-    <div class="service-row">
+    <div class="service-row reverse">
       <div class="service-media">
         <img src="https://images.unsplash.com/photo-1760317890322-364a810cd4da?auto=format&fit=crop&w=1000&q=75" alt="Close-up of a car's performance brake system">
       </div>
       <div class="service-text">
-        <span class="service-number">03</span>
+        <span class="service-number">04</span>
         <h2>Brakes</h2>
         <p class="lede">Pads, rotors, calipers, and brake lines inspected and serviced to factory or performance spec. Your safety on the road starts with brakes you can rely on every time you press the pedal.</p>
         <div class="btn-row">
@@ -406,12 +470,12 @@
       </div>
     </div>
 
-    <div class="service-row reverse">
+    <div class="service-row">
       <div class="service-media">
         <img src="https://images.unsplash.com/photo-1764869427626-f15802570098?auto=format&fit=crop&w=1000&q=75" alt="Close-up view of a vintage car's suspension system">
       </div>
       <div class="service-text">
-        <span class="service-number">04</span>
+        <span class="service-number">05</span>
         <h2>Suspension</h2>
         <p class="lede">Struts, shocks, control arms, alignment, and steering components &mdash; serviced to restore a smooth, confident ride and even tire wear, on both modern and classic platforms.</p>
         <div class="btn-row">
@@ -420,12 +484,12 @@
       </div>
     </div>
 
-    <div class="service-row">
+    <div class="service-row reverse">
       <div class="service-media">
         <img src="https://images.unsplash.com/photo-1615906655593-ad0386982a0f?auto=format&fit=crop&w=1000&q=75" alt="Mechanic working on a car engine">
       </div>
       <div class="service-text">
-        <span class="service-number">05</span>
+        <span class="service-number">06</span>
         <h2>Engine Repair</h2>
         <p class="lede">From a single worn component to a complete engine rebuild, we bring the same precision and care to every job &mdash; including carbureted engines that many modern shops no longer service.</p>
         <div class="btn-row">
@@ -434,12 +498,12 @@
       </div>
     </div>
 
-    <div class="service-row reverse">
+    <div class="service-row">
       <div class="service-media">
         <img src="https://images.unsplash.com/photo-1632733711679-529326f6db12?auto=format&fit=crop&w=1000&q=75" alt="A mechanic working on a car's engine bay">
       </div>
       <div class="service-text">
-        <span class="service-number">06</span>
+        <span class="service-number">07</span>
         <h2>Performance Modifications</h2>
         <p class="lede">For owners who want more out of their vehicle, we offer performance-minded upgrades &mdash; built with the same honest recommendations and attention to detail as every repair that leaves our shop.</p>
         <div class="btn-row">
@@ -448,12 +512,12 @@
       </div>
     </div>
 
-    <div class="service-row">
+    <div class="service-row reverse">
       <div class="service-media">
         <img src="images/photos/international-pickup.jpg" alt="A light-blue classic International pickup with white wheels" loading="lazy">
       </div>
       <div class="service-text">
-        <span class="service-number">07</span>
+        <span class="service-number">08</span>
         <h2>Classic Car &amp; Vintage Restoration</h2>
         <p class="lede">Carbureted engines, vintage electrical systems, and the hands-on know-how that keeps older automobiles on the road. We particularly enjoy working with owners who want to preserve a classic rather than trade it in.</p>
         <div class="btn-row">
@@ -463,12 +527,12 @@
       </div>
     </div>
 
-    <div class="service-row reverse">
+    <div class="service-row">
       <div class="service-media">
         <img src="images/storefront.jpg" alt="SP Automotive shop on Formula Place in the Miramar business park">
       </div>
       <div class="service-text">
-        <span class="service-number">08</span>
+        <span class="service-number">09</span>
         <h2>Commercial Fleet Maintenance</h2>
         <p class="lede">Priority scheduling, consolidated monthly invoicing and complete service records by VIN for contractors, route fleets and delivery operators in the Miramar, Sorrento Valley and Kearny Mesa business parks.</p>
         <div class="btn-row">
@@ -495,7 +559,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="images/brand/sp-badge.svg" alt="SP Automotive veteran-owned badge" width="180" height="111">
+        <img src="images/brand/sp-primary-reversed.svg" alt="SP Automotive &mdash; Service, Repair, Restoration" width="260" height="79" loading="lazy">
         <p>Independently owned auto repair in Miramar, San Diego, with honest service on everything from daily drivers and fleet vehicles to classic carbureted machines.</p>
         <div class="footer-faith">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
@@ -508,7 +572,10 @@
       </div>
       <div class="footer-col">
         <h4>QUICK LINKS</h4>
+        <a href="military.html">Military &amp; Veterans</a>
         <a href="services.html">Services</a>
+        <a href="services/oil-change.html">Oil Change</a>
+        <a href="drop-off.html">Workday Drop-Off</a>
         <a href="fleet-services.html">Fleet Services</a>
         <a href="restorations.html">Restorations</a>
         <a href="faq.html">FAQ</a>
@@ -519,7 +586,7 @@
         <h4>VISIT THE SHOP</h4>
         <p>7675 Formula Place, Suite D<br>San Diego, CA 92121</p>
         <a href="tel:+18584063375">(858) 406-3375</a>
-        <a href="mailto:lake@sp-automotive.com">lake@sp-automotive.com</a>
+        <a class="email-link" href="contact.html#request" data-email-lake>lake@sp-automotive.com</a>
         <p>Mon&ndash;Fri: 8:00 AM &ndash; 5:00 PM<br>Sat: 8:00 AM &ndash; 12:00 PM<br>Sun: Closed</p>
       </div>
     </div>
@@ -530,6 +597,6 @@
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=5"></script>
 </body>
 </html>
